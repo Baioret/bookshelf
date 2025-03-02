@@ -1,0 +1,5 @@
+org\baioret\bookshelf\controller\UserController.class
+org\baioret\bookshelf\service\UserService.class
+org\baioret\bookshelf\repository\User.class
+org\baioret\bookshelf\BookshelfApplication.class
+org\baioret\bookshelf\repository\UserRepository.class
