@@ -23,6 +23,14 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User findById(Long id) {
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isEmpty()) {
+            throw new IllegalStateException("User with id " + id + " does not exist");
+        }
+        return optionalUser.get();
+    }
+
     public User create(User user) {
         Optional<User> optionalUser = userRepository.findByEmail(user.getEmail());
         if (optionalUser.isPresent()) {

@@ -5,7 +5,6 @@ import org.baioret.bookshelf.service.UserService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @SpringBootApplication
@@ -23,6 +22,11 @@ public class UserController {
     @GetMapping
     public List<User> findAll() {
         return userService.findAll();
+    }
+
+    @GetMapping(path = "{id}")
+    public User findById(@PathVariable long id) {
+        return userService.findById(id);
     }
 
     @PostMapping
